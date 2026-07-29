@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ManyValuedLogicTheoremCanonicalLaneLean.ManyValuedTruthEvaluations
+import HautevilleHouse.ManyValuedLogicTheoremCanonicalLaneLean.ManyValuedBridgeLemmas
+
+namespace HautevilleHouse
+namespace ManyValuedLogicTheoremCanonicalLaneLean
+
+def gateClosed (A : AdmissibleClass) : Prop :=
+  A.endpointSatisfied ∨ A.remainderRecorded
+
+theorem gate_from_admissible_class (A : AdmissibleClass) :
+    gateClosed A := by
+  exact A.gateWitness
+
+end ManyValuedLogicTheoremCanonicalLaneLean
+end HautevilleHouse
